@@ -1,0 +1,9 @@
+<div class="card">
+    <img class="card-img-top" [src]="book.image"/>
+    <div class="card-body d-flex flex-column">
+        <span class="card-title fw-bold">{{book.title}}</span>
+        <cite class="text-secondary">by {{book.author}}</cite>
+        <span class="text-danger">${{book.price.displayValue}}</span>
+        <button class="d-flex align-self-end btn btn-primary" (click)="addToCart(book)"><i class="bi bi-cart"></i></button>
+    </div>
+</div>

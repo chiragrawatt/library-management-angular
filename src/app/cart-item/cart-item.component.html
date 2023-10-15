@@ -1,0 +1,11 @@
+<div class="card card-body d-flex flex-column">
+    <span class="fw-bold">{{index}}. {{cartItem.book.title}}</span>
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+        <span class="text-success">${{cartItem.book.price.displayValue}}</span>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" (click)="decreaseCartQuantity(cartItem.book)" class="btn btn-primary">-</button>
+            <button type="button" class="btn btn-primary disabled">{{cartItem.quantity}}</button>
+            <button type="button" (click)="increaseCartQuantity(cartItem.book)" class="btn btn-primary">+</button>
+          </div>
+    </div>
+</div>

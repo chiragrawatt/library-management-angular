@@ -1,0 +1,10 @@
+<app-navbar (searchTextEmitter)="filterBooksByTitle($event)"></app-navbar>
+<div class="row container-fluid">
+    <div class="col row py-4 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+        <app-book-card *ngFor="let book of books" [book]="book" (toCartEmitter)="addToCart($event)"></app-book-card>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-5 mt-4">
+        <app-cart-item *ngFor="let item of cart; index as i" [cartItem]="item" [index]="i+1" (increaseQuantity)="addToCart($event)" (decreaseQuantity)="removeFromCart($event)"></app-cart-item>
+        <h2>Total: {{total}}</h2>
+    </div>
+</div>
